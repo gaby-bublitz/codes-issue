@@ -20,6 +20,8 @@
  * Imposto a pagar = Renda Anual * Alíquota
  * 
  */
+
+
 public class Ex4 {
     
     // Teste o codigo na main em outra classe
@@ -45,10 +47,12 @@ public class Ex4 {
     }
 
     public String getCpf() {
+        // exibição com formatação com pontos e traços
 	return cpf;
     }
 
     public void setCpf(String cpf) {
+        // validação da formatação do cpf
 	this.cpf = cpf;
     }
 
@@ -57,6 +61,7 @@ public class Ex4 {
     }
 
     public void setUf(String uf) {
+        // validação de regra de negócio (RS, PR e SC)
 	this.uf = uf;
     }
 
@@ -70,16 +75,18 @@ public class Ex4 {
 	}
         
 	this.rendaAnual = rendaAnual;
+        
+        // if (rendaAnual >= 0) {this.rendaAnual = rendaAnual;}
     }
 
     public double calcularImposto() {
-        double aliquota;
+        double aliquota; // double aliquota = 0.0;
 
-	if (rendaAnual >= 4000) {
+	if (rendaAnual >= 4000) { // if (rendaAnual <= 4000) 
             aliquota = 0.0;
             
 	} else if (rendaAnual <= 9000) {
-            aliquota = 0.58;
+            aliquota = 0.58; // aliquota = 0.058;
             
 	} else if (rendaAnual <= 25000) {
             aliquota = 0.15;
@@ -88,7 +95,7 @@ public class Ex4 {
             aliquota = 0.275;                      
 	}
         
-	aliquota = 0.30;
+	aliquota = 0.30; // else {aliquota = 0.30;}
 
 	return rendaAnual * aliquota;
         
